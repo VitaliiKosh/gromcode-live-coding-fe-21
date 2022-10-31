@@ -23,7 +23,7 @@ function sum(a, b) {
   return a + b;
 }
 // test data
-console.log(sum(5, 7)); // ==> 12
+console.log(sum(5, 7));
 console.log(sum(-7, 5));
 console.log(sum("He", "llo"));
 
@@ -58,6 +58,13 @@ console.log(mult(2, 4)); // ==> 8
 console.log(mult(-7, -7)); // ==> 49
 console.log(mult(5, null)); // ==> 0
 console.log(mult("aaa", "bbb")); // ==> NaN
+
+const square = (a) => a * a;
+// test data
+console.log(square(2)); // ==> 4
+console.log(square(-7)); // ==> 49
+console.log(square(5)); // ==> 25
+console.log(square("aaa")); // ==> NaN
 
 const getMagicNumber = () => {
   return 17;
