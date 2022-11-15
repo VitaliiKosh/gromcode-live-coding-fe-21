@@ -43,25 +43,46 @@ console.log("after", obj3);
 
 // V3
 function addPropertyV3(obj, key, value) {
-  //option 1 - BAD
-  //  return Object.assign({ [key]: value }, obj);
+  // option 1 - BAD
+  // return Object.assign({ [key]: value }, obj);
 
   // option 2 - GOOD
   return Object.assign({}, obj, { [key]: value });
 }
 
 // test data
-const obj4 = {};
-console.log("before", obj4);
+const obj1 = {};
+console.log("before", obj1);
 console.log(addPropertyV3({}, "name", "vasya"));
-console.log("after", obj4);
+console.log("after", obj1);
 
-const obj5 = { name: "vasya" };
-console.log("before", obj5);
+const obj2 = { name: "vasya" };
+console.log("before", obj2);
 console.log(addPropertyV3({ name: "vasya" }, "age", 17));
-console.log("after", obj5);
+console.log("after", obj2);
 
-const obj6 = { name: "vasya" };
-console.log("before", obj6);
+const obj3 = { name: "vasya" };
+console.log("before", obj3);
 console.log(addPropertyV3({ name: "vasya" }, "name", "ivan"));
-console.log("after", obj6);
+console.log("after", obj3);
+
+// V4
+function addPropertyV3(obj, key, value) {
+  return { ...obj, [key]: value };
+}
+
+// test data
+const obj1 = {};
+console.log("before", obj1);
+console.log(addPropertyV3({}, "name", "vasya"));
+console.log("after", obj1);
+
+const obj2 = { name: "vasya" };
+console.log("before", obj2);
+console.log(addPropertyV3({ name: "vasya" }, "age", 17));
+console.log("after", obj2);
+
+const obj3 = { name: "vasya" };
+console.log("before", obj3);
+console.log(addPropertyV3({ name: "vasya" }, "name", "ivan"));
+console.log("after", obj3);
